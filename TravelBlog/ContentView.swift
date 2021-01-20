@@ -34,14 +34,16 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
+
+// MARK: - 1.0
 struct DiscoverCategoriesView: View {
     
-    let categoriesList = CategoryList()
+    let categoriesList = CategoryList().categories
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .top, spacing: 14) {
-                ForEach(categoriesList.categories, id: \.self) { category in
+                ForEach(categoriesList, id: \.self) { category in
                     VStack(spacing: 4){
                         Image(systemName: category.imageName)
                             .foregroundColor(.white)
@@ -62,11 +64,16 @@ struct DiscoverCategoriesView: View {
     }
 }
 
+
+//MARK: - 2.0
 struct PopularDestinationView: View {
+    
+    let popularPlaces = Places().popularPlaces
+    
     var body: some View {
         VStack {
             HStack {
-                Text("Popular destination")
+                Text("Popular destinations")
                 Spacer()
                 Text("See all")
             }
@@ -76,12 +83,32 @@ struct PopularDestinationView: View {
             
             ScrollView(.horizontal) {
                 HStack(spacing: 8.0) {
-                    ForEach(0..<5, id: \.self) { num in
-                        Spacer()
-                            .frame(width: 125, height: 150)
-                            .background(Color.gray)
+                    ForEach(popularPlaces, id: \.self) { places in
+                        VStack(alignment: .leading, spacing: 0) {
+                            Image(places.cityImage)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 100, height: 100)
+                                .cornerRadius(5)
+                                .padding(.horizontal, 4)
+                                .padding(.vertical, 4)
+                            
+                            
+                            Text(places.cityName)
+                                .font(.system(size: 12, weight: .semibold))
+                                .padding(.horizontal, 12)
+                                
+                            Text(places.country)
+                                .font(.system(size: 12, weight: .semibold))
+                                .foregroundColor(Color(UIColor.gray))
+                                .padding(.horizontal, 12)
+                                .padding(.bottom, 8)
+                                
+                        }
+//                            .frame(width: 125)
+                            .background(Color(.init(white: 0.9, alpha: 1)))
                             .cornerRadius(5)
-                            .shadow(color: .gray, radius: 4, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 3)
+                            .shadow(color: .gray, radius: 2, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 2)
                             .padding(.bottom)
                     }
                 }
@@ -92,7 +119,7 @@ struct PopularDestinationView: View {
     }
 }
 
-
+//MARK: 3.0
 struct PopularPlacesToEat: View {
     var body: some View {
         VStack {
@@ -123,6 +150,7 @@ struct PopularPlacesToEat: View {
     }
 }
 
+//MARK: 4.0
 struct TrendCreators: View {
     var body: some View {
         VStack {
