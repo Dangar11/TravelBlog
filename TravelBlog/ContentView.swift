@@ -105,7 +105,6 @@ struct PopularDestinationView: View {
                                 .padding(.bottom, 8)
                                 
                         }
-//                            .frame(width: 125)
                             .background(Color(.init(white: 0.9, alpha: 1)))
                             .cornerRadius(5)
                             .shadow(color: .gray, radius: 2, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 2)
@@ -121,6 +120,9 @@ struct PopularDestinationView: View {
 
 //MARK: 3.0
 struct PopularPlacesToEat: View {
+    
+    let restaurants = Restaurant().restaurants
+    
     var body: some View {
         VStack {
             HStack {
@@ -134,10 +136,45 @@ struct PopularPlacesToEat: View {
             
             ScrollView(.horizontal) {
                 HStack(spacing: 8.0) {
-                    ForEach(0..<5, id: \.self) { num in
-                        Spacer()
-                            .frame(width: 200, height: 80)
-                            .background(Color.gray)
+                    ForEach(restaurants, id: \.self) { restaurant in
+                        HStack(alignment: .top) {
+                            Image(restaurant.image)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 70, height: 70)
+                                .clipped()
+                                .padding(.leading, 6)
+                                .padding(.vertical, 6)
+                            
+                            VStack(alignment: .leading, spacing: 8) {
+                                HStack {
+                                    Text(restaurant.name)
+                                    Spacer()
+                                    Button(action: {
+                                        
+                                    }, label: {
+                                        Image(systemName: "circle.grid.cross")
+                                    })
+                                    .foregroundColor(.black)
+                                    
+                                }
+                                .padding(.top, 5)
+                                
+                                HStack(spacing: 2) {
+                                    Image(systemName: "star.circle")
+                                    Text(restaurant.rank)
+                                }    
+                                Text(restaurant.countryPlace)
+                                    .foregroundColor(Color(UIColor.darkGray))
+
+                            }
+                            .font(.system(size: 12, weight: .semibold))
+                            .padding(.leading, 4)
+                            
+                            Spacer()
+                        }
+                            .frame(width: 240)
+                            .background(Color(.init(white: 0.9, alpha: 1)))
                             .cornerRadius(5)
                             .shadow(color: .gray, radius: 4, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 3)
                             .padding(.bottom)
