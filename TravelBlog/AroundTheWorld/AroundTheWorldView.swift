@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct AroundTheWorldView: View {
     
     //Title for all screens
@@ -23,7 +25,7 @@ struct AroundTheWorldView: View {
                 LinearGradient(gradient: Gradient(colors: [Color.gray, Color.blue]), startPoint: .top, endPoint: .bottom)
                     .ignoresSafeArea()
                 
-                Color(.init(white: 0.9, alpha: 1))
+                Color.aroundTheWorldBackground
                     .offset(y:400) 
                 
                 ScrollView {
@@ -50,7 +52,7 @@ struct AroundTheWorldView: View {
                         
                         TrendingCreatorsView()
                     }
-                    .background(Color(.init(white: 0.9, alpha: 1)))
+                    .background(Color.aroundTheWorldBackground)
                     .cornerRadius(16)
                     .padding(.top, 32)
                     

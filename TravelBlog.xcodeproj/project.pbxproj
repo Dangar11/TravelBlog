@@ -15,6 +15,8 @@
 		26A5800925BB32E500D5A01E /* PopularPlacesToEatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5800825BB32E500D5A01E /* PopularPlacesToEatView.swift */; };
 		26A5800C25BB330D00D5A01E /* TrendingCreatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5800B25BB330D00D5A01E /* TrendingCreatorsView.swift */; };
 		26A5801125BB33D900D5A01E /* DiscoverCategorisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5801025BB33D900D5A01E /* DiscoverCategorisView.swift */; };
+		26A5801625BB379B00D5A01E /* TileModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5801525BB379B00D5A01E /* TileModifier.swift */; };
+		26A5801A25BB38A100D5A01E /* Color + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5801925BB38A100D5A01E /* Color + Extensions.swift */; };
 		26A9D4C425B8A6C900C1F78E /* TravelBlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9D4C325B8A6C900C1F78E /* TravelBlogApp.swift */; };
 		26A9D4C625B8A6C900C1F78E /* AroundTheWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9D4C525B8A6C900C1F78E /* AroundTheWorldView.swift */; };
 		26A9D4C825B8A6CA00C1F78E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A9D4C725B8A6CA00C1F78E /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		26A5800825BB32E500D5A01E /* PopularPlacesToEatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPlacesToEatView.swift; sourceTree = "<group>"; };
 		26A5800B25BB330D00D5A01E /* TrendingCreatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCreatorsView.swift; sourceTree = "<group>"; };
 		26A5801025BB33D900D5A01E /* DiscoverCategorisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCategorisView.swift; sourceTree = "<group>"; };
+		26A5801525BB379B00D5A01E /* TileModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileModifier.swift; sourceTree = "<group>"; };
+		26A5801925BB38A100D5A01E /* Color + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Extensions.swift"; sourceTree = "<group>"; };
 		26A9D4C025B8A6C900C1F78E /* TravelBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A9D4C325B8A6C900C1F78E /* TravelBlogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelBlogApp.swift; sourceTree = "<group>"; };
 		26A9D4C525B8A6C900C1F78E /* AroundTheWorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundTheWorldView.swift; sourceTree = "<group>"; };
@@ -60,6 +64,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		26A5801425BB378400D5A01E /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				26A5801525BB379B00D5A01E /* TileModifier.swift */,
+				26A5801925BB38A100D5A01E /* Color + Extensions.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		26A9D4B725B8A6C900C1F78E = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +92,7 @@
 		26A9D4C225B8A6C900C1F78E /* TravelBlog */ = {
 			isa = PBXGroup;
 			children = (
+				26A5801425BB378400D5A01E /* Utility */,
 				26DA805425BB2B2500D869E2 /* AroundTheWorld */,
 				262AB93B25B8D71A003E77BB /* Models */,
 				26A9D4C325B8A6C900C1F78E /* TravelBlogApp.swift */,
@@ -179,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26A9D4C625B8A6C900C1F78E /* AroundTheWorldView.swift in Sources */,
+				26A5801625BB379B00D5A01E /* TileModifier.swift in Sources */,
 				262AB94025B8EC08003E77BB /* PlaceModel.swift in Sources */,
 				26A5800525BB2C8B00D5A01E /* PopularDestinationView.swift in Sources */,
 				26A5800925BB32E500D5A01E /* PopularPlacesToEatView.swift in Sources */,
@@ -186,6 +201,7 @@
 				26A9D4C425B8A6C900C1F78E /* TravelBlogApp.swift in Sources */,
 				262AB93D25B8D72E003E77BB /* Category.swift in Sources */,
 				2676757625B98FAB00C4ED98 /* RestaurantModel.swift in Sources */,
+				26A5801A25BB38A100D5A01E /* Color + Extensions.swift in Sources */,
 				267C157725BB06A100502EE3 /* TrendingCreatorsModel.swift in Sources */,
 				26A5801125BB33D900D5A01E /* DiscoverCategorisView.swift in Sources */,
 			);

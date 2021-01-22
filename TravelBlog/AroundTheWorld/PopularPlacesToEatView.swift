@@ -34,7 +34,7 @@ struct PopularPlacesToEatView: View {
                                 .cornerRadius(5)
                                 .padding(.leading, 6)
                                 .padding(.vertical, 6)
-                                
+                            
                             
                             VStack(alignment: .leading, spacing: 8) {
                                 HStack {
@@ -56,19 +56,16 @@ struct PopularPlacesToEatView: View {
                                 }
                                 Text(restaurant.countryPlace)
                                     .foregroundColor(Color(UIColor.darkGray))
-
+                                
                             }
                             .font(.system(size: 12, weight: .semibold))
                             .padding(.leading, 4)
                             
                             Spacer()
                         }
-                            .frame(width: 240)
-                        .background(Color(.white))
-                            .cornerRadius(5)
-                            .shadow(color: .init(.sRGB, white: 0.8, opacity: 1), radius: 2, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 2)
-                            .padding(.bottom)
-                            .padding(.bottom)
+                        .frame(width: 240)
+                        .asTile() // TileModifier 
+                        .padding(.bottom)
                     }
                 }
                 .padding(.horizontal)
@@ -77,6 +74,8 @@ struct PopularPlacesToEatView: View {
         
     }
 }
+
+
 
 struct PopularPlacesToEat_Previews: PreviewProvider {
     static var previews: some View {
