@@ -8,23 +8,57 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    //Title for all screens
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
     var body: some View {
+        
         NavigationView {
             
-            ScrollView {
-                DiscoverCategoriesView()
+            ZStack {
                 
-                PopularDestinationView()
+                LinearGradient(gradient: Gradient(colors: [Color.gray, Color.blue]), startPoint: .top, endPoint: .bottom)
+                    .ignoresSafeArea()
                 
-                PopularPlacesToEat()
+                Color(.init(white: 0.9, alpha: 1))
+                    .offset(y:400)
                 
-                TrendCreators()
+                ScrollView {
+                    
+                    HStack {
+                        Image(systemName: "magnifyingglass.circle")
+                        Text("Place to go...")
+                        Spacer()
+                    }
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color(.init(white: 1.0, alpha: 0.3)))
+                    .cornerRadius(16)
+                    .padding(16)
+                    
+                    DiscoverCategoriesView()
+                    
+                    VStack {
+                        
+                        PopularDestinationView()
+                        
+                        PopularPlacesToEat()
+                        
+                        TrendCreators()
+                    }
+                    .background(Color(.init(white: 0.9, alpha: 1)))
+                    .cornerRadius(16)
+                    .padding(.top, 32)
+                    
+                    
+                }
             }
-            
             .navigationTitle("Around The World")
-            
         }
-        
     }
 }
 
@@ -46,14 +80,15 @@ struct DiscoverCategoriesView: View {
                 ForEach(categoriesList, id: \.self) { category in
                     VStack(spacing: 4){
                         Image(systemName: category.imageName)
-                            .foregroundColor(.white)
+                            .foregroundColor(Color(#colorLiteral(red: 0.3990089893, green: 0.5306997299, blue: 0.6986097097, alpha: 1)))
                             .frame(width: 64, height: 64)
-                            .background(Color.gray)
+                            .background(Color.white)
                             .cornerRadius(64)
                             .shadow(color: .gray, radius: 4, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 3)
                         Text(category.name)
                             .font(.system(size: 12, weight: .semibold))
                             .multilineTextAlignment(.center)
+                            .foregroundColor(.white)
                     }
                     .frame(width: 64)
                     
@@ -105,9 +140,9 @@ struct PopularDestinationView: View {
                                 .padding(.bottom, 8)
                                 
                         }
-                            .background(Color(.init(white: 0.9, alpha: 1)))
+                        .background(Color(.white))
                             .cornerRadius(5)
-                            .shadow(color: .gray, radius: 2, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 2)
+                        .shadow(color: .init(.sRGB, white: 0.8, opacity: 1), radius: 2, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 2)
                             .padding(.bottom)
                     }
                 }
@@ -176,9 +211,10 @@ struct PopularPlacesToEat: View {
                             Spacer()
                         }
                             .frame(width: 240)
-                            .background(Color(.init(white: 0.9, alpha: 1)))
+                        .background(Color(.white))
                             .cornerRadius(5)
-                            .shadow(color: .gray, radius: 4, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 3)
+                            .shadow(color: .init(.sRGB, white: 0.8, opacity: 1), radius: 2, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 2)
+                            .padding(.bottom)
                             .padding(.bottom)
                     }
                 }
