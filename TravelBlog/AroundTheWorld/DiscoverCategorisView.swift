@@ -40,23 +40,63 @@ struct DiscoverCategoriesView: View {
     }
 }
 
+
+class CategoryDetailsViewModel: ObservableObject {
+    
+    @Published var isLoading = true
+    @Published var places = [Int]()
+    
+    init() {
+        //networking
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.isLoading = false
+        }
+        
+        
+        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { (timer) in
+            DispatchQueue.main.async {
+                self.places.append(1)
+            }
+        }
+        
+    }
+    
+}
+
+
+
 struct CategoryDetailsView: View {
+    
+    //    @State var isLoading = false
+    
+    @ObservedObject var vm = CategoryDetailsViewModel()
     
     
     var body: some View {
-        ScrollView {
-            ForEach(0..<5, id: \.self) { num in
-                VStack(alignment: .leading, spacing: 0){
-                    Image("canada_night")
-                        .resizable()
-                        .scaledToFill()
-                        
-                   Text("Demo123")
-                    .font(.system(size: 12, weight: .semibold, design: .monospaced))
-                    .padding()
+        
+        
+        ZStack {
+            if vm.isLoading {
+                ProgressView("Loading...")
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color.blue))
+                    .accentColor(Color(.black))
+                    .foregroundColor(.blue)
+                    .scaleEffect(1.5)
+            } else {
+                ScrollView {
+                    ForEach(vm.places, id: \.self) { num in
+                        VStack(alignment: .leading, spacing: 0){
+                            Image("canada_night")
+                                .resizable()
+                                .scaledToFill()
+                            Text("Demo123")
+                                .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                                .padding()
+                        }
+                        .asTile()
+                        .padding()
+                    }
                 }
-                .asTile()
-                .padding()
             }
         }
         .navigationBarTitle("Category", displayMode: .inline)
@@ -64,18 +104,13 @@ struct CategoryDetailsView: View {
     }
 }
 
+
 struct DiscoverCategorisView_Previews: PreviewProvider {
     static var previews: some View {
-        AroundTheWorldView()
+        //        AroundTheWorldView()
         NavigationView {
             CategoryDetailsView()
         }
-       
-        
-//        ZStack {
-//            Color.gray
-//            DiscoverCategoriesView()
-//        }
         
     }
 }
