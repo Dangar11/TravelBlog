@@ -11,8 +11,12 @@
 		262AB94025B8EC08003E77BB /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262AB93F25B8EC08003E77BB /* PlaceModel.swift */; };
 		2676757625B98FAB00C4ED98 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2676757525B98FAB00C4ED98 /* RestaurantModel.swift */; };
 		267C157725BB06A100502EE3 /* TrendingCreatorsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267C157625BB06A100502EE3 /* TrendingCreatorsModel.swift */; };
+		26A5800525BB2C8B00D5A01E /* PopularDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5800425BB2C8B00D5A01E /* PopularDestinationView.swift */; };
+		26A5800925BB32E500D5A01E /* PopularPlacesToEatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5800825BB32E500D5A01E /* PopularPlacesToEatView.swift */; };
+		26A5800C25BB330D00D5A01E /* TrendingCreatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5800B25BB330D00D5A01E /* TrendingCreatorsView.swift */; };
+		26A5801125BB33D900D5A01E /* DiscoverCategorisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5801025BB33D900D5A01E /* DiscoverCategorisView.swift */; };
 		26A9D4C425B8A6C900C1F78E /* TravelBlogApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9D4C325B8A6C900C1F78E /* TravelBlogApp.swift */; };
-		26A9D4C625B8A6C900C1F78E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9D4C525B8A6C900C1F78E /* ContentView.swift */; };
+		26A9D4C625B8A6C900C1F78E /* AroundTheWorldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9D4C525B8A6C900C1F78E /* AroundTheWorldView.swift */; };
 		26A9D4C825B8A6CA00C1F78E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A9D4C725B8A6CA00C1F78E /* Assets.xcassets */; };
 		26A9D4CB25B8A6CA00C1F78E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26A9D4CA25B8A6CA00C1F78E /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -22,9 +26,13 @@
 		262AB93F25B8EC08003E77BB /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		2676757525B98FAB00C4ED98 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		267C157625BB06A100502EE3 /* TrendingCreatorsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCreatorsModel.swift; sourceTree = "<group>"; };
+		26A5800425BB2C8B00D5A01E /* PopularDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDestinationView.swift; sourceTree = "<group>"; };
+		26A5800825BB32E500D5A01E /* PopularPlacesToEatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPlacesToEatView.swift; sourceTree = "<group>"; };
+		26A5800B25BB330D00D5A01E /* TrendingCreatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCreatorsView.swift; sourceTree = "<group>"; };
+		26A5801025BB33D900D5A01E /* DiscoverCategorisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCategorisView.swift; sourceTree = "<group>"; };
 		26A9D4C025B8A6C900C1F78E /* TravelBlog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBlog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26A9D4C325B8A6C900C1F78E /* TravelBlogApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelBlogApp.swift; sourceTree = "<group>"; };
-		26A9D4C525B8A6C900C1F78E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		26A9D4C525B8A6C900C1F78E /* AroundTheWorldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundTheWorldView.swift; sourceTree = "<group>"; };
 		26A9D4C725B8A6CA00C1F78E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26A9D4CA25B8A6CA00C1F78E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		26A9D4CC25B8A6CA00C1F78E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,7 +49,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		262AB93B25B8D71A003E77BB /* Model */ = {
+		262AB93B25B8D71A003E77BB /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				262AB93C25B8D72E003E77BB /* Category.swift */,
@@ -49,7 +57,7 @@
 				2676757525B98FAB00C4ED98 /* RestaurantModel.swift */,
 				267C157625BB06A100502EE3 /* TrendingCreatorsModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		26A9D4B725B8A6C900C1F78E = {
@@ -71,9 +79,9 @@
 		26A9D4C225B8A6C900C1F78E /* TravelBlog */ = {
 			isa = PBXGroup;
 			children = (
-				262AB93B25B8D71A003E77BB /* Model */,
+				26DA805425BB2B2500D869E2 /* AroundTheWorld */,
+				262AB93B25B8D71A003E77BB /* Models */,
 				26A9D4C325B8A6C900C1F78E /* TravelBlogApp.swift */,
-				26A9D4C525B8A6C900C1F78E /* ContentView.swift */,
 				26A9D4C725B8A6CA00C1F78E /* Assets.xcassets */,
 				26A9D4CC25B8A6CA00C1F78E /* Info.plist */,
 				26A9D4C925B8A6CA00C1F78E /* Preview Content */,
@@ -87,6 +95,18 @@
 				26A9D4CA25B8A6CA00C1F78E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		26DA805425BB2B2500D869E2 /* AroundTheWorld */ = {
+			isa = PBXGroup;
+			children = (
+				26A9D4C525B8A6C900C1F78E /* AroundTheWorldView.swift */,
+				26A5800425BB2C8B00D5A01E /* PopularDestinationView.swift */,
+				26A5800825BB32E500D5A01E /* PopularPlacesToEatView.swift */,
+				26A5800B25BB330D00D5A01E /* TrendingCreatorsView.swift */,
+				26A5801025BB33D900D5A01E /* DiscoverCategorisView.swift */,
+			);
+			path = AroundTheWorld;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,12 +178,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A9D4C625B8A6C900C1F78E /* ContentView.swift in Sources */,
+				26A9D4C625B8A6C900C1F78E /* AroundTheWorldView.swift in Sources */,
 				262AB94025B8EC08003E77BB /* PlaceModel.swift in Sources */,
+				26A5800525BB2C8B00D5A01E /* PopularDestinationView.swift in Sources */,
+				26A5800925BB32E500D5A01E /* PopularPlacesToEatView.swift in Sources */,
+				26A5800C25BB330D00D5A01E /* TrendingCreatorsView.swift in Sources */,
 				26A9D4C425B8A6C900C1F78E /* TravelBlogApp.swift in Sources */,
 				262AB93D25B8D72E003E77BB /* Category.swift in Sources */,
 				2676757625B98FAB00C4ED98 /* RestaurantModel.swift in Sources */,
 				267C157725BB06A100502EE3 /* TrendingCreatorsModel.swift in Sources */,
+				26A5801125BB33D900D5A01E /* DiscoverCategorisView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
