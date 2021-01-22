@@ -143,8 +143,10 @@ struct PopularPlacesToEat: View {
                                 .scaledToFill()
                                 .frame(width: 70, height: 70)
                                 .clipped()
+                                .cornerRadius(5)
                                 .padding(.leading, 6)
                                 .padding(.vertical, 6)
+                                
                             
                             VStack(alignment: .leading, spacing: 8) {
                                 HStack {
@@ -189,6 +191,9 @@ struct PopularPlacesToEat: View {
 
 //MARK: 4.0
 struct TrendCreators: View {
+    
+    let trendingCreators = TrendingCreators().trendingCreators
+    
     var body: some View {
         VStack {
             HStack {
@@ -201,13 +206,23 @@ struct TrendCreators: View {
             .padding(.top)
             
             ScrollView(.horizontal) {
-                HStack(spacing: 8.0) {
-                    ForEach(0..<13, id: \.self) { num in
-                        Spacer()
-                            .frame(width: 50, height: 50)
-                            .background(Color.gray)
-                            .cornerRadius(.infinity)
-                            .shadow(color: .gray, radius: 4, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 3)
+                HStack(alignment: .top,spacing: 8.0) {
+                    ForEach(trendingCreators, id: \.self) { creator in
+                        VStack {
+                            Image(creator.image)
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 60, height: 60)
+                                .cornerRadius(30)
+                                .shadow(color: .gray, radius: 4, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 3)
+                            Text(creator.name)
+                                .lineLimit(nil)
+                                .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                                .font(.system(size: 12, weight: .semibold))
+                                .multilineTextAlignment(.center)
+                                
+                        }
+                        .frame(width: 70)
                             .padding(.bottom)
                     }
                 }
