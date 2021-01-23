@@ -81,7 +81,7 @@ struct PopularDestanationRow: View {
 struct PopularDestionationView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            PopularDestinationDetailView(places: .init(country: "Paris", cityName: "France", cityImage: "paris"))
+            PopularDestinationView()
         }
         AroundTheWorldView()
         

@@ -6,10 +6,20 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct PopularDestinationDetailView: View {
     
     let places: PlaceModel
+    //Map Coordinate
+    @State var coordinateRegion: MKCoordinateRegion
+    
+    init(places: PlaceModel) {
+        self.places = places
+        self._coordinateRegion = State(initialValue: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: places.coordinate.latitude,
+                                                                                                      longitude: places.coordinate.longtitude),
+                                                                       span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)))
+    }
     
     var body: some View {
         ScrollView {
@@ -33,10 +43,24 @@ struct PopularDestinationDetailView: View {
                 
                 Text(LoremIpsum.loremIpsum)
                     .padding(.top, 8)
-                        .font(.system(size: 16, weight: .thin, design: .monospaced))
-                HStack { Spacer() }
+                        .font(.system(size: 14, weight: .thin, design: .monospaced))
+                Spacer()
+                HStack {
+                    Text("Location")
+                        .font(.system(size: 18, weight: .bold, design: .monospaced))
+                    Spacer()
+                }
+                Map(coordinateRegion: $coordinateRegion)
+                    .frame(height: 200)
+                    .cornerRadius(15)
+                    .padding([.top, .bottom], 15)
+                
+                    
             }
             .padding(.horizontal)
+            
+            
+            
         }
         .navigationBarTitle("\(places.cityName)", displayMode: .inline)
         
@@ -46,7 +70,7 @@ struct PopularDestinationDetailView: View {
 struct Destination_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-                    PopularDestinationDetailView(places: PlaceModel(country: "Ukraine", cityName: "Kiev", cityImage: "kiev"))
+                    PopularDestinationDetailView(places: PlaceModel(country: "Ukraine", cityName: "Kiev", cityImage: "kiev", coordinate: PlaceCoordinate(latitude: 37.0902, longtitude: 95.7129)))
             
         }
     }
