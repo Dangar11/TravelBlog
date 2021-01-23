@@ -17,7 +17,7 @@ struct DiscoverCategoriesView: View {
             HStack(alignment: .top, spacing: 14) {
                 ForEach(categoriesList, id: \.self) { category in
                     NavigationLink(
-                        destination: CategoryDetailsView(),
+                        destination: CategoryDetailsView(name: category.name),
                         label: {
                             VStack(spacing: 4){
                                 Image(systemName: category.imageName)
@@ -30,6 +30,7 @@ struct DiscoverCategoriesView: View {
                                     .font(.system(size: 12, weight: .semibold))
                                     .multilineTextAlignment(.center)
                                     .foregroundColor(.white)
+                                    .fixedSize(horizontal: true, vertical: true)
                             }
                             .frame(width: 64)
                         })
@@ -46,10 +47,7 @@ struct DiscoverCategoriesView: View {
 
 struct DiscoverCategorisView_Previews: PreviewProvider {
     static var previews: some View {
-        //        AroundTheWorldView()
-        NavigationView {
-            CategoryDetailsView()
-        }
+        DiscoverCategoriesView()
         
     }
 }

@@ -114,6 +114,18 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		26A5803925BBBAC700D5A01E /* AroundTheWorld */ = {
+			isa = PBXGroup;
+			children = (
+				26A9D4C525B8A6C900C1F78E /* AroundTheWorldView.swift */,
+				26A5800425BB2C8B00D5A01E /* PopularDestinationView.swift */,
+				26A5800825BB32E500D5A01E /* PopularPlacesToEatView.swift */,
+				26A5800B25BB330D00D5A01E /* TrendingCreatorsView.swift */,
+				26A5801025BB33D900D5A01E /* DiscoverCategorisView.swift */,
+			);
+			path = AroundTheWorld;
+			sourceTree = "<group>";
+		};
 		26A9D4B725B8A6C900C1F78E = {
 			isa = PBXGroup;
 			children = (
@@ -135,7 +147,7 @@
 			children = (
 				26A5802F25BBA80100D5A01E /* ViewModels */,
 				26A5801425BB378400D5A01E /* Utility */,
-				26DA805425BB2B2500D869E2 /* AroundTheWorld */,
+				26DA805425BB2B2500D869E2 /* Views */,
 				262AB93B25B8D71A003E77BB /* Models */,
 				26A9D4C325B8A6C900C1F78E /* TravelBlogApp.swift */,
 				26A9D4C725B8A6CA00C1F78E /* Assets.xcassets */,
@@ -153,17 +165,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		26DA805425BB2B2500D869E2 /* AroundTheWorld */ = {
+		26DA805425BB2B2500D869E2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				26A5803925BBBAC700D5A01E /* AroundTheWorld */,
 				26A5802625BBA6E500D5A01E /* Category */,
-				26A9D4C525B8A6C900C1F78E /* AroundTheWorldView.swift */,
-				26A5800425BB2C8B00D5A01E /* PopularDestinationView.swift */,
-				26A5800825BB32E500D5A01E /* PopularPlacesToEatView.swift */,
-				26A5800B25BB330D00D5A01E /* TrendingCreatorsView.swift */,
-				26A5801025BB33D900D5A01E /* DiscoverCategorisView.swift */,
 			);
-			path = AroundTheWorld;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

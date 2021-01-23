@@ -11,7 +11,16 @@ import Kingfisher
 
 struct CategoryDetailsView: View {
     
-    @ObservedObject var vm = CategoryDetailsViewModel()
+    
+    private let name: String
+    @ObservedObject private var vm: CategoryDetailsViewModel
+    
+    init(name: String) {
+        self.name = name
+        self.vm = .init(name: name)
+    }
+    
+
     
     
     var body: some View {
@@ -23,10 +32,17 @@ struct CategoryDetailsView: View {
                     .progressViewStyle(CircularProgressViewStyle(tint: Color.blue))
                     .accentColor(Color(.black))
                     .foregroundColor(.blue)
-                    .scaleEffect(1.5)
             } else {
                 ZStack {
-                    Text(vm.errorMessage)
+                    if !vm.errorMessage.isEmpty {
+                        VStack(spacing: 12) {
+                            Image(systemName: "xmark.square")
+                                .font(.system(size: 64, weight: .semibold, design: .monospaced))
+                                .foregroundColor(.red)
+                            Text(vm.errorMessage)
+                        }
+                        
+                    }
                     ScrollView {
                         ForEach(vm.places, id: \.self) { place in
                             VStack(alignment: .leading, spacing: 0){
@@ -45,13 +61,13 @@ struct CategoryDetailsView: View {
                 
             }
         }
-        .navigationBarTitle("Category", displayMode: .inline)
+        .navigationBarTitle(name, displayMode: .inline)
         
     }
 }
 
 struct CategoryDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryDetailsView()
+        CategoryDetailsView(name: "Food")
     }
 }

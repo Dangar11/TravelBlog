@@ -15,19 +15,33 @@ class CategoryDetailsViewModel: ObservableObject {
     
     @Published var errorMessage = ""
     
-    init() {
+    init(name: String) {
         
         //networking
         
-        guard let url = URL(string: "https://travel.letsbuildthatapp.com/travel_discovery/category?name=art") else { return }
+        let urlString =  "https://travel.letsbuildthatapp.com/travel_discovery/category?name=\(name.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")"
+        
+        guard let url = URL(string: urlString) else { return }
+        print(url)
         URLSession.shared.dataTask(with: url) { [weak self] (data, resp, error) in
+            
+            guard let self = self else { return }
             
             if let error = error {
                 print(error.localizedDescription)
             }
             
-            guard let data = data, let self = self else { return }
             
+            
+            if let statusCode = (resp as? HTTPURLResponse)?.statusCode,
+               statusCode >= 400 {
+                self.isLoading = false
+                self.errorMessage = "Bad Request Status: \(statusCode)"
+                return
+            }
+            
+            
+            guard let data = data else { return }
             do {
                 let artData = try JSONDecoder().decode([ArtModel].self, from: data)
                 self.places = artData
