@@ -44,20 +44,35 @@ struct DiscoverCategoriesView: View {
 class CategoryDetailsViewModel: ObservableObject {
     
     @Published var isLoading = true
-    @Published var places = [Int]()
+    @Published var places = [ArtModel]()
+    
+    @Published var errorMessage = ""
     
     init() {
         //networking
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        
+        guard let url = URL(string: "https://travel.letsbuildthatapp.com/travel_discovery/category?name=art") else { return }
+        URLSession.shared.dataTask(with: url) { [weak self] (data, resp, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+            guard let data = data, let self = self else { return }
+            
+            do {
+                let artData = try JSONDecoder().decode([ArtModel].self, from: data)
+                self.places = artData
+                
+            } catch let error {
+                print("Failed to decode JSON:", error.localizedDescription)
+                self.errorMessage = error.localizedDescription
+            }
+            
             self.isLoading = false
         }
-        
-        
-        Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { (timer) in
-            DispatchQueue.main.async {
-                self.places.append(1)
-            }
-        }
+        .resume()
+       
         
     }
     
@@ -66,8 +81,6 @@ class CategoryDetailsViewModel: ObservableObject {
 
 
 struct CategoryDetailsView: View {
-    
-    //    @State var isLoading = false
     
     @ObservedObject var vm = CategoryDetailsViewModel()
     
@@ -83,20 +96,24 @@ struct CategoryDetailsView: View {
                     .foregroundColor(.blue)
                     .scaleEffect(1.5)
             } else {
-                ScrollView {
-                    ForEach(vm.places, id: \.self) { num in
-                        VStack(alignment: .leading, spacing: 0){
-                            Image("canada_night")
-                                .resizable()
-                                .scaledToFill()
-                            Text("Demo123")
-                                .font(.system(size: 12, weight: .semibold, design: .monospaced))
-                                .padding()
+                ZStack {
+                    Text(vm.errorMessage)
+                    ScrollView {
+                        ForEach(vm.places, id: \.self) { place in
+                            VStack(alignment: .leading, spacing: 0){
+                                Image("canada_night")
+                                    .resizable()
+                                    .scaledToFill()
+                                Text(place.name)
+                                    .font(.system(size: 12, weight: .semibold, design: .monospaced))
+                                    .padding()
+                            }
+                            .asTile()
+                            .padding()
                         }
-                        .asTile()
-                        .padding()
                     }
                 }
+                
             }
         }
         .navigationBarTitle("Category", displayMode: .inline)
