@@ -17,7 +17,7 @@ struct DiscoverCategoriesView: View {
             HStack(alignment: .top, spacing: 14) {
                 ForEach(categoriesList, id: \.self) { category in
                     NavigationLink(
-                        destination: CategoryDetailsView(name: category.name),
+                        destination: NavigationLazyView(CategoryDetailsView(name: category.name)), // bug fix https://www.objc.io/blog/2019/07/02/lazy-loading/
                         label: {
                             VStack(spacing: 4){
                                 Image(systemName: category.imageName)
@@ -47,7 +47,7 @@ struct DiscoverCategoriesView: View {
 
 struct DiscoverCategorisView_Previews: PreviewProvider {
     static var previews: some View {
-        DiscoverCategoriesView()
-        
+//        DiscoverCategoriesView()
+        AroundTheWorldView()
     }
 }

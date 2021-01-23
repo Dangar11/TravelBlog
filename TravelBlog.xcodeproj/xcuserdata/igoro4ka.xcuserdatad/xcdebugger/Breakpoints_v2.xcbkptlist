@@ -14,8 +14,8 @@
             filePath = "TravelBlog/ViewModels/CategoryDetailsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "init(name:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -34,6 +34,70 @@
             endingLineNumber = "24"
             landmarkName = "init(name:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1579FA84-3A8F-484E-9962-4ED025B2CB80"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TravelBlog/ViewModels/CategoryDetailsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "init(name:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1579FA84-3A8F-484E-9962-4ED025B2CB80 - bb781b2e1d3fa08a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TravelBlog.CategoryDetailsViewModel.init(name: Swift.String) -&gt; TravelBlog.CategoryDetailsViewModel"
+                  moduleName = "TravelBlog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igoro4ka/Desktop/TravelBlog/TravelBlog/ViewModels/CategoryDetailsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "946">
+               </Location>
+               <Location
+                  uuid = "1579FA84-3A8F-484E-9962-4ED025B2CB80 - 3843d55f5560c7f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TravelBlog.CategoryDetailsViewModel.init(name: Swift.String) -&gt; TravelBlog.CategoryDetailsViewModel"
+                  moduleName = "TravelBlog"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/igoro4ka/Desktop/TravelBlog/TravelBlog/ViewModels/CategoryDetailsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "126">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4CF41AA4-DE48-4395-A4C1-946DC056A480"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TravelBlog/Utility/LazyLoadingViews.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

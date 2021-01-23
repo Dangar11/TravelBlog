@@ -32,26 +32,29 @@ class CategoryDetailsViewModel: ObservableObject {
             }
             
             
-            
-            if let statusCode = (resp as? HTTPURLResponse)?.statusCode,
-               statusCode >= 400 {
-                self.isLoading = false
-                self.errorMessage = "Bad Request Status: \(statusCode)"
-                return
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                if let statusCode = (resp as? HTTPURLResponse)?.statusCode,
+                   statusCode >= 400 {
+                    self.isLoading = false
+                    self.errorMessage = "Bad Request Status: \(statusCode)"
+                    return
+                }
             }
+            
             
             
             guard let data = data else { return }
-            do {
-                let artData = try JSONDecoder().decode([ArtModel].self, from: data)
-                self.places = artData
-                self.isLoading = false
-            } catch let error {
-                print("Failed to decode JSON:", error.localizedDescription)
-                self.errorMessage = error.localizedDescription
-            }
             
-            
+                do {
+                    let artData = try JSONDecoder().decode([ArtModel].self, from: data)
+                        self.places = artData
+                } catch let error {
+                    print("Failed to decode JSON:", error.localizedDescription)
+                        self.errorMessage = error.localizedDescription
+                }
+            self.isLoading = false
+        
+           
         }
         .resume()
         
