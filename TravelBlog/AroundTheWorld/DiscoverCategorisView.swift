@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct DiscoverCategoriesView: View {
     
@@ -41,85 +42,6 @@ struct DiscoverCategoriesView: View {
 }
 
 
-class CategoryDetailsViewModel: ObservableObject {
-    
-    @Published var isLoading = true
-    @Published var places = [ArtModel]()
-    
-    @Published var errorMessage = ""
-    
-    init() {
-        //networking
-        
-        guard let url = URL(string: "https://travel.letsbuildthatapp.com/travel_discovery/category?name=art") else { return }
-        URLSession.shared.dataTask(with: url) { [weak self] (data, resp, error) in
-            
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            
-            guard let data = data, let self = self else { return }
-            
-            do {
-                let artData = try JSONDecoder().decode([ArtModel].self, from: data)
-                self.places = artData
-                
-            } catch let error {
-                print("Failed to decode JSON:", error.localizedDescription)
-                self.errorMessage = error.localizedDescription
-            }
-            
-            self.isLoading = false
-        }
-        .resume()
-       
-        
-    }
-    
-}
-
-
-
-struct CategoryDetailsView: View {
-    
-    @ObservedObject var vm = CategoryDetailsViewModel()
-    
-    
-    var body: some View {
-        
-        
-        ZStack {
-            if vm.isLoading {
-                ProgressView("Loading...")
-                    .progressViewStyle(CircularProgressViewStyle(tint: Color.blue))
-                    .accentColor(Color(.black))
-                    .foregroundColor(.blue)
-                    .scaleEffect(1.5)
-            } else {
-                ZStack {
-                    Text(vm.errorMessage)
-                    ScrollView {
-                        ForEach(vm.places, id: \.self) { place in
-                            VStack(alignment: .leading, spacing: 0){
-                                Image("canada_night")
-                                    .resizable()
-                                    .scaledToFill()
-                                Text(place.name)
-                                    .font(.system(size: 12, weight: .semibold, design: .monospaced))
-                                    .padding()
-                            }
-                            .asTile()
-                            .padding()
-                        }
-                    }
-                }
-                
-            }
-        }
-        .navigationBarTitle("Category", displayMode: .inline)
-        
-    }
-}
 
 
 struct DiscoverCategorisView_Previews: PreviewProvider {
