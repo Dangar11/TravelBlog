@@ -11,14 +11,16 @@ import MapKit
 struct PopularDestinationDetailView: View {
     
     let places: PlaceModel
+    let attractions = Attraction()
     //Map Coordinate
     @State var coordinateRegion: MKCoordinateRegion
+    @State var stateAttraction = false
     
     init(places: PlaceModel) {
         self.places = places
         self._coordinateRegion = State(initialValue: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: places.coordinate.latitude,
                                                                                                       longitude: places.coordinate.longtitude),
-                                                                       span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)))
+                                                                        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)))
     }
     
     var body: some View {
@@ -49,11 +51,24 @@ struct PopularDestinationDetailView: View {
                     Text("Location")
                         .font(.system(size: 18, weight: .bold, design: .monospaced))
                     Spacer()
+                    Button(action: {
+                        stateAttraction.toggle()
+                    }, label: {
+                        Text("\(stateAttraction ? "Hide" : "Show") Attractions")
+                            .font(.system(size: 14, weight: .thin, design: .monospaced))
+                    })
+                    Toggle("", isOn: $stateAttraction)
+                        .labelsHidden()
                 }
-                Map(coordinateRegion: $coordinateRegion)
-                    .frame(height: 200)
-                    .cornerRadius(15)
-                    .padding([.top, .bottom], 15)
+ 
+                
+                Map(coordinateRegion: $coordinateRegion, annotationItems: stateAttraction ? attractions.attractions : []) { attraction in
+                    return MapMarker(coordinate: .init(latitude: attraction.lattitude, longitude: attraction.longtitude), tint: Color.green)
+                }
+                .frame(height: 200)
+                .cornerRadius(15)
+                .padding([.top, .bottom], 15)
+            
                 
                     
             }
@@ -66,6 +81,9 @@ struct PopularDestinationDetailView: View {
         
     }
 }
+
+
+
 
 struct Destination_Previews: PreviewProvider {
     static var previews: some View {

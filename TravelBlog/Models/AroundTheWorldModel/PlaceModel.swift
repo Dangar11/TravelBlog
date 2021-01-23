@@ -31,3 +31,5 @@ struct Places {
                           PlaceModel(country: "USA", cityName: "New York", cityImage: "new_york", coordinate: PlaceCoordinate(latitude: 40.70764196864904, longtitude: -74.00977389957389))]
     
 }
+
+
