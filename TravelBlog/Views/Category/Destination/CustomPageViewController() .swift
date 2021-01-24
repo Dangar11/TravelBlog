@@ -7,6 +7,7 @@
 
 
 import SwiftUI
+import Kingfisher
 
 class CustomPageViewController: UIPageViewController {
     
@@ -28,7 +29,7 @@ class CustomPageViewController: UIPageViewController {
         
         allControllers = imageNames.map { imageName in
             let hostingContoller = UIHostingController(rootView:
-                                                        Image(imageName.image)
+                                                        KFImage(URL(string: imageName.image))
                                                         .resizable()
                                                         .scaledToFill()
             )
