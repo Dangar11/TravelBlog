@@ -14,13 +14,14 @@ struct MapAttractionModel:  Identifiable {
     let name: String
     let lattitude: Double
     let longtitude: Double
+    let imageName: String
 }
 
 
 struct Attraction {
-    let attractions: [MapAttractionModel] = [.init(name: "Eiffel Tower", lattitude: 48.85908905552732, longtitude: 2.2945092129628284),
-                                             .init(name: "Champs-Elysees", lattitude: 48.866867, longtitude: 2.311780),
-                                                .init(name: "Louvre Museum", lattitude: 48.860288, longtitude: 2.337789)]
+    let attractions: [MapAttractionModel] = [.init(name: "Eiffel Tower", lattitude: 48.85908905552732, longtitude: 2.2945092129628284, imageName: "eiffel-tower"),
+                                             .init(name: "Champs-Elysees", lattitude: 48.866867, longtitude: 2.311780, imageName: "champs-elysees"),
+                                             .init(name: "Louvre Museum", lattitude: 48.860288, longtitude: 2.337789, imageName: "louvre")]
 }
 
 
