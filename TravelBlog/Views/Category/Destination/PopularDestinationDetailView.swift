@@ -1,5 +1,5 @@
 //
-//  Destination.swift
+//  PopularDestinationDetailView.swift
 //  TravelBlog
 //
 //  Created by Igoro4ka on 23.01.2021.
@@ -19,13 +19,13 @@ struct PopularDestinationDetailView: View {
         self.places = places
     }
     
+
+    
     var body: some View {
         ScrollView {
-            Image(places.cityImage)
-                .resizable()
-                .scaledToFill()
-                .frame(height: 200)
-                .clipped()
+            DestinationHeaderContainer() // UIKit ViewController
+                .frame(height: 250)
+            
             VStack(alignment: .leading, spacing: 4) {
                 Text(places.country)
                     .font(.system(size: 18, weight: .semibold, design: .monospaced))
