@@ -11,16 +11,11 @@ import Kingfisher
 
 class CustomPageViewController: UIPageViewController {
     
-//
-//    let firstVC = UIHostingController(rootView: Text("First View Controller"))
-//    let secondVC = UIHostingController(rootView: Text("Second View Controller"))
-//    let thirdVC = UIHostingController(rootView: Text("Third View Controller"))
-    
     
     
     lazy var allControllers: [UIViewController] = []
     
-    init(imageNames: [ParisImageModel]) {
+    init(imageNames: [String]) {
         super.init(transitionStyle: .scroll,
                    navigationOrientation: .horizontal,
                    options: nil)
@@ -29,7 +24,7 @@ class CustomPageViewController: UIPageViewController {
         
         allControllers = imageNames.map { imageName in
             let hostingContoller = UIHostingController(rootView:
-                                                        KFImage(URL(string: imageName.image))
+                                                        KFImage(URL(string: imageName))
                                                         .resizable()
                                                         .scaledToFill()
             )

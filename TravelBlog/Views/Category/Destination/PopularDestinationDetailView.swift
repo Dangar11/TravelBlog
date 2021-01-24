@@ -26,7 +26,7 @@ struct PopularDestinationDetailView: View {
     
     var body: some View {
         ScrollView {
-            DestinationHeaderContainer(imagesURLString: parisImage.images) // UIKit ViewController
+            DestinationHeaderContainer(imagesURLString: places.photoCountries.urlString) // UIKit ViewController
                 .frame(height: 250)
             
             VStack(alignment: .leading, spacing: 4) {
@@ -131,7 +131,7 @@ struct CustomMapAnnotation: View {
 struct Destination_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-                    PopularDestinationDetailView(places: PlaceModel(country: "France", cityName: "Paris", cityImage: "paris", coordinate: PlaceCoordinate(latitude: 48.859565, longtitude: 2.353235)))
+            PopularDestinationDetailView(places: PlaceModel(country: "France", cityName: "Paris", cityImage: "paris", coordinate: PlaceCoordinate(latitude: 48.859565, longtitude: 2.353235), photoCountries: .init(urlString: ParisImage().images)))
             
         }
     }
