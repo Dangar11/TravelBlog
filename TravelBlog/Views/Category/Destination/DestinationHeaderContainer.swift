@@ -10,10 +10,10 @@ import SwiftUI
 
 struct DestinationHeaderContainer: UIViewControllerRepresentable {
     
-    typealias UIViewControllerType = UIViewController
+    let imageNames: [ParisImageModel]
     
     func makeUIViewController(context: Context) -> UIViewController {
-        let customPageViewController = CustomPageViewController()
+        let customPageViewController = CustomPageViewController(imageNames: imageNames)
         return customPageViewController
     }
     
@@ -28,7 +28,7 @@ struct DestinationHeaderContainer: UIViewControllerRepresentable {
 
 struct DestinationHeaderContainer_Previews: PreviewProvider {
     static var previews: some View {
-        DestinationHeaderContainer()
+        DestinationHeaderContainer(imageNames: ParisImage().images)
         NavigationView {
                     PopularDestinationDetailView(places: PlaceModel(country: "France", cityName: "Paris", cityImage: "paris", coordinate: PlaceCoordinate(latitude: 48.859565, longtitude: 2.353235)))
         }

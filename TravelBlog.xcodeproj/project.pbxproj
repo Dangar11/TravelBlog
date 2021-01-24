@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		262408B325BDAB2800F1DE06 /* CustomPageViewController() .swift in Sources */ = {isa = PBXBuildFile; fileRef = 262408B225BDAB2800F1DE06 /* CustomPageViewController() .swift */; };
+		262408B625BDB96A00F1DE06 /* ParisImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262408B525BDB96A00F1DE06 /* ParisImageModel.swift */; };
 		262AB93D25B8D72E003E77BB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262AB93C25B8D72E003E77BB /* Category.swift */; };
 		262AB94025B8EC08003E77BB /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262AB93F25B8EC08003E77BB /* PlaceModel.swift */; };
 		2673820725BC2D86003B876F /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2673820625BC2D86003B876F /* NavigationLazyView.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		262408B225BDAB2800F1DE06 /* CustomPageViewController() .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomPageViewController() .swift"; sourceTree = "<group>"; };
+		262408B525BDB96A00F1DE06 /* ParisImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParisImageModel.swift; sourceTree = "<group>"; };
 		262AB93C25B8D72E003E77BB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		262AB93F25B8EC08003E77BB /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		2673820625BC2D86003B876F /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				26A5801F25BB9DEB00D5A01E /* ArtModel.swift */,
 				2673821125BC66B4003B876F /* MapAttractionModel.swift */,
+				262408B525BDB96A00F1DE06 /* ParisImageModel.swift */,
 			);
 			path = DetailsModel;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				26A5800525BB2C8B00D5A01E /* PopularDestinationView.swift in Sources */,
 				26A5800925BB32E500D5A01E /* PopularPlacesToEatView.swift in Sources */,
 				26A5800C25BB330D00D5A01E /* TrendingCreatorsView.swift in Sources */,
+				262408B625BDB96A00F1DE06 /* ParisImageModel.swift in Sources */,
 				26A9D4C425B8A6C900C1F78E /* TravelBlogApp.swift in Sources */,
 				262AB93D25B8D72E003E77BB /* Category.swift in Sources */,
 				267DF9F025BDA10900953489 /* DestinationHeaderContainer.swift in Sources */,

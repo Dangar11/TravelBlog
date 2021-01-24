@@ -10,21 +10,35 @@ import SwiftUI
 
 class CustomPageViewController: UIPageViewController {
     
+//
+//    let firstVC = UIHostingController(rootView: Text("First View Controller"))
+//    let secondVC = UIHostingController(rootView: Text("Second View Controller"))
+//    let thirdVC = UIHostingController(rootView: Text("Third View Controller"))
     
-    let firstVC = UIHostingController(rootView: Text("First View Controller"))
-    let secondVC = UIHostingController(rootView: Text("Second View Controller"))
-    let thirdVC = UIHostingController(rootView: Text("Third View Controller"))
     
-    lazy var allControllers: [UIViewController] = [
-        firstVC, secondVC, thirdVC
-    ]
     
-    init() {
+    lazy var allControllers: [UIViewController] = []
+    
+    init(imageNames: [ParisImageModel]) {
         super.init(transitionStyle: .scroll,
                    navigationOrientation: .horizontal,
                    options: nil)
         
-        setViewControllers([firstVC], direction: .forward, animated: true, completion: nil)
+       
+        
+        allControllers = imageNames.map { imageName in
+            let hostingContoller = UIHostingController(rootView:
+                                                        Image(imageName.image)
+                                                        .resizable()
+                                                        .scaledToFill()
+            )
+            
+            hostingContoller.view.clipsToBounds = true
+            
+            return hostingContoller
+        }
+        
+        setViewControllers([allControllers.first!], direction: .forward, animated: true, completion: nil)
         
         self.dataSource = self
         self.delegate = self

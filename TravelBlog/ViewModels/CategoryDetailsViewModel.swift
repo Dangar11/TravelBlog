@@ -45,6 +45,7 @@ class CategoryDetailsViewModel: ObservableObject {
             
             guard let data = data else { return }
             
+            DispatchQueue.main.async {
                 do {
                     let artData = try JSONDecoder().decode([ArtModel].self, from: data)
                         self.places = artData
@@ -53,6 +54,9 @@ class CategoryDetailsViewModel: ObservableObject {
                         self.errorMessage = error.localizedDescription
                 }
             self.isLoading = false
+            }
+            
+             
         
            
         }

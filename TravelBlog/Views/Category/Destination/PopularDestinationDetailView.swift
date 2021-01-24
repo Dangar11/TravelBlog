@@ -8,10 +8,13 @@
 import SwiftUI
 import MapKit
 
+
+
 struct PopularDestinationDetailView: View {
     
     let places: PlaceModel
-
+    
+    let parisImage = ParisImage()
     //Map Coordinate
 
     
@@ -23,7 +26,7 @@ struct PopularDestinationDetailView: View {
     
     var body: some View {
         ScrollView {
-            DestinationHeaderContainer() // UIKit ViewController
+            DestinationHeaderContainer(imageNames: parisImage.images) // UIKit ViewController
                 .frame(height: 250)
             
             VStack(alignment: .leading, spacing: 4) {
