@@ -42,7 +42,7 @@ struct PopularDestinationDetailView: View {
                     }
                 }
                 
-                Text(LoremIpsum.loremIpsum)
+                Text(places.about)
                     .padding(.top, 8)
                         .font(.system(size: 14, weight: .thin, design: .monospaced))
                 Spacer()
@@ -131,7 +131,7 @@ struct CustomMapAnnotation: View {
 struct Destination_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            PopularDestinationDetailView(places: PlaceModel(country: "France", cityName: "Paris", cityImage: "paris", coordinate: PlaceCoordinate(latitude: 48.859565, longtitude: 2.353235), photoCountries: .init(urlString: ParisImage().images)))
+            PopularDestinationDetailView(places: PlaceModel(country: "France", cityName: "Paris", cityImage: "paris", coordinate: PlaceCoordinate(latitude: 48.859565, longtitude: 2.353235), photoCountries: .init(urlString: ParisImage().images), about: ParisAbout().about))
             
         }
     }

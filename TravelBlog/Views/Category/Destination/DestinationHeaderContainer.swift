@@ -30,7 +30,7 @@ struct DestinationHeaderContainer_Previews: PreviewProvider {
     static var previews: some View {
         DestinationHeaderContainer(imagesURLString: ParisImage().images)
         NavigationView {
-            PopularDestinationDetailView(places: PlaceModel(country: "France", cityName: "Paris", cityImage: "paris", coordinate: PlaceCoordinate(latitude: 48.859565, longtitude: 2.353235), photoCountries: .init(urlString: ParisImage().images)))
+            PopularDestinationDetailView(places: PlaceModel(country: "France", cityName: "Paris", cityImage: "paris", coordinate: PlaceCoordinate(latitude: 48.859565, longtitude: 2.353235), photoCountries: .init(urlString: ParisImage().images), about: ParisAbout().about))
         }
     }
 }
