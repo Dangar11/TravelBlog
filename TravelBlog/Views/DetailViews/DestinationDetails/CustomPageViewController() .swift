@@ -60,6 +60,25 @@ class CustomPageViewController: UIPageViewController {
 extension CustomPageViewController: UIPageViewControllerDataSource {
     
     
+   
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return allControllers.count
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        0
+    }
+    
+    
+}
+
+
+//MARK: - UIPageViewControllerDelegate
+
+extension CustomPageViewController: UIPageViewControllerDelegate {
+    
+       
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let index = allControllers.firstIndex(of: viewController) else { return nil }
         if index == 0 { return nil }
@@ -74,20 +93,7 @@ extension CustomPageViewController: UIPageViewControllerDataSource {
         return allControllers[index + 1]
     }
     
-}
-
-
-//MARK: - UIPageViewControllerDelegate
-
-extension CustomPageViewController: UIPageViewControllerDelegate {
     
-       
-       func presentationCount(for pageViewController: UIPageViewController) -> Int {
-           return allControllers.count
-       }
-       
-       func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-           0
-       }
+        
     
 }

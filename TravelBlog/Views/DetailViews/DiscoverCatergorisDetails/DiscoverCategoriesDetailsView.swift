@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 
-struct CategoryDetailsView: View {
+struct DiscoverCategoriesDetailsView: View {
     
     
     private let name: String
@@ -69,6 +69,6 @@ struct CategoryDetailsView: View {
 
 struct CategoryDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryDetailsView(name: "Food")
+        DiscoverCategoriesDetailsView(name: "Food")
     }
 }

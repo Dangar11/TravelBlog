@@ -17,7 +17,7 @@ struct DiscoverCategoriesView: View {
             HStack(alignment: .top, spacing: 14) {
                 ForEach(categoriesList, id: \.self) { category in
                     NavigationLink(
-                        destination: NavigationLazyView(CategoryDetailsView(name: category.name)), // bug fix https://www.objc.io/blog/2019/07/02/lazy-loading/
+                        destination: NavigationLazyView(DiscoverCategoriesDetailsView(name: category.name)), // bug fix https://www.objc.io/blog/2019/07/02/lazy-loading/
                         label: {
                             VStack(spacing: 4){
                                 Image(systemName: category.imageName)

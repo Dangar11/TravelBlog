@@ -25,47 +25,13 @@ struct PopularPlacesToEatView: View {
             ScrollView(.horizontal) {
                 HStack(spacing: 8.0) {
                     ForEach(restaurants, id: \.self) { restaurant in
-                        HStack(alignment: .top) {
-                            Image(restaurant.image)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 70, height: 70)
-                                .clipped()
-                                .cornerRadius(5)
-                                .padding(.leading, 6)
-                                .padding(.vertical, 6)
-                            
-                            
-                            VStack(alignment: .leading, spacing: 8) {
-                                HStack {
-                                    Text(restaurant.name)
-                                    Spacer()
-                                    Button(action: {
-                                        
-                                    }, label: {
-                                        Image(systemName: "circle.grid.cross")
-                                    })
-                                    .foregroundColor(.black)
-                                    
-                                }
-                                .padding(.top, 5)
-                                
-                                HStack(spacing: 2) {
-                                    Image(systemName: "star.circle")
-                                    Text(restaurant.rank)
-                                }
-                                Text(restaurant.countryPlace)
-                                    .foregroundColor(Color(UIColor.darkGray))
-                                
-                            }
-                            .font(.system(size: 12, weight: .semibold))
-                            .padding(.leading, 4)
-                            
-                            Spacer()
-                        }
-                        .frame(width: 240)
-                        .asTile() // TileModifier 
-                        .padding(.bottom)
+                        NavigationLink(
+                            destination: RestaurantDetailsView(restaurant: restaurant),
+                            label: {
+                                RestaurantView(restaurant: restaurant)  // RestaurantView
+                                    .foregroundColor(Color(.label))
+                            })
+                       
                     }
                 }
                 .padding(.horizontal)
@@ -77,8 +43,61 @@ struct PopularPlacesToEatView: View {
 
 
 
+
+struct RestaurantView: View {
+    
+    let restaurant: RestraurantModel
+    
+    var body: some View {
+        HStack(alignment: .top) {
+            Image(restaurant.image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 70, height: 70)
+                .clipped()
+                .cornerRadius(5)
+                .padding(.leading, 6)
+                .padding(.vertical, 6)
+            
+            
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Text(restaurant.name)
+                    Spacer()
+                    Button(action: {
+                        
+                    }, label: {
+                        Image(systemName: "circle.grid.cross")
+                    })
+                    .foregroundColor(.black)
+                    
+                }
+                .padding(.top, 5)
+                
+                HStack(spacing: 2) {
+                    Image(systemName: "star.circle")
+                    Text(restaurant.rank)
+                }
+                Text(restaurant.countryPlace)
+                    .foregroundColor(Color(UIColor.darkGray))
+                
+            }
+            .font(.system(size: 12, weight: .semibold))
+            .padding(.leading, 4)
+            
+            Spacer()
+        }
+        .frame(width: 240)
+        .asTile() // TileModifier
+        .padding(.bottom)
+    }
+}
+
+
+
 struct PopularPlacesToEat_Previews: PreviewProvider {
     static var previews: some View {
-        PopularPlacesToEatView()
+        AroundTheWorldView()
+//        PopularPlacesToEatView()
     }
 }
