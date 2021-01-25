@@ -55,11 +55,18 @@ struct TopDescriptionView: View {
                     }
                 }
                 Spacer()
-                Text("See more photos")
-                    .foregroundColor(.white)
-                    .font(.system(size: 14, weight: .light, design: .monospaced))
-                    .frame(width: 80)
-                    .multilineTextAlignment(.trailing)
+                
+                NavigationLink(
+                    destination: RestaurantPhotosView(),
+                    label: {
+                        Text("Show more photos")
+                            .foregroundColor(.white)
+                            .font(.system(size: 14, weight: .light, design: .monospaced))
+                            .frame(width: 80)
+                            .multilineTextAlignment(.trailing)
+                    })
+                
+              
             }
             .padding()
         }
