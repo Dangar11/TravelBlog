@@ -14,9 +14,12 @@ class RestaurantDetailsViewModel: ObservableObject {
     
     @Published var details: RestaurantDetails?
     
+    
+    
+    let creators = TrendingCreators()
+    
     init() {
-        //
-        
+   
         let urlString = "https://travel.letsbuildthatapp.com/travel_discovery/restaurant?id=0"
         
         guard let url = URL(string: urlString) else { return }
@@ -31,12 +34,14 @@ class RestaurantDetailsViewModel: ObservableObject {
             
             DispatchQueue.main.async {
                 do {
+                    
                     self.details = try JSONDecoder().decode(RestaurantDetails.self, from: data)
                     
                 } catch let error {
                     print(error.localizedDescription)
                 }
             }
+            
         }
         .resume()
     }

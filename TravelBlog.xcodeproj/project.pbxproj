@@ -22,6 +22,7 @@
 		267DF9F025BDA10900953489 /* DestinationHeaderContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 267DF9EF25BDA10900953489 /* DestinationHeaderContainer.swift */; };
 		2685397A25BF50DD00D45575 /* RestaurantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685397925BF50DD00D45575 /* RestaurantDetail.swift */; };
 		2685397D25BF5A0600D45575 /* RestaurantDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685397C25BF5A0600D45575 /* RestaurantDetailsViewModel.swift */; };
+		2685398125BF6A0D00D45575 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2685398025BF6A0D00D45575 /* DateFormatter.swift */; };
 		26A5800525BB2C8B00D5A01E /* PopularDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5800425BB2C8B00D5A01E /* PopularDestinationView.swift */; };
 		26A5800925BB32E500D5A01E /* PopularPlacesToEatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5800825BB32E500D5A01E /* PopularPlacesToEatView.swift */; };
 		26A5800C25BB330D00D5A01E /* TrendingCreatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A5800B25BB330D00D5A01E /* TrendingCreatorsView.swift */; };
@@ -54,6 +55,7 @@
 		267DF9EF25BDA10900953489 /* DestinationHeaderContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationHeaderContainer.swift; sourceTree = "<group>"; };
 		2685397925BF50DD00D45575 /* RestaurantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetail.swift; sourceTree = "<group>"; };
 		2685397C25BF5A0600D45575 /* RestaurantDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsViewModel.swift; sourceTree = "<group>"; };
+		2685398025BF6A0D00D45575 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		26A5800425BB2C8B00D5A01E /* PopularDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDestinationView.swift; sourceTree = "<group>"; };
 		26A5800825BB32E500D5A01E /* PopularPlacesToEatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPlacesToEatView.swift; sourceTree = "<group>"; };
 		26A5800B25BB330D00D5A01E /* TrendingCreatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingCreatorsView.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				26A5801925BB38A100D5A01E /* Color + Extensions.swift */,
 				2673820625BC2D86003B876F /* NavigationLazyView.swift */,
 				2673820A25BC3D99003B876F /* LoremIpsum.swift */,
+				2685398025BF6A0D00D45575 /* DateFormatter.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2685398125BF6A0D00D45575 /* DateFormatter.swift in Sources */,
 				267BA77925BEAFEB005145FC /* CountryAbout.swift in Sources */,
 				26A9D4C625B8A6C900C1F78E /* AroundTheWorldView.swift in Sources */,
 				26A5802025BB9DEB00D5A01E /* ArtModel.swift in Sources */,

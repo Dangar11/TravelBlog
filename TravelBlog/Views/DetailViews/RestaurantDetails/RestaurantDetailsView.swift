@@ -105,6 +105,7 @@ struct PopularDishesView: View {
     
     @ObservedObject var vm = RestaurantDetailsViewModel()
     
+    
     var body: some View {
         HStack {
             Text("Popular Dishes")
@@ -145,6 +146,66 @@ struct PopularDishesView: View {
                 }
             }
             .padding(.leading)
+            .padding(.bottom)
+        }
+        
+        CustomerReviewsView(trendingCreator: vm.creators.trendingCreators)
+        
+    }
+    
+}
+
+
+struct CustomerReviewsView: View {
+    
+    let trendingCreator: [TrendingCreatorsModel]
+    
+    var body: some View {
+        HStack {
+            Text("Customer Reviews")
+                .font(.system(size: 18, weight: .bold, design: .monospaced))
+            Spacer()
+        }.padding(.horizontal)
+        
+        
+        ForEach(trendingCreator, id: \.self) { review in
+            
+            VStack(alignment: .leading) {
+                
+                HStack {
+                    Image(review.image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 60, height: 60)
+                        .cornerRadius(30)
+                    
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("\(review.name)")
+                            .font(.system(size: 16, weight: .bold, design: .monospaced))
+                        HStack(spacing: 0){
+                            ForEach(0..<review.rating, id: \.self) { num in
+                                Image(systemName: "star.circle")
+                                    .foregroundColor(.orange)
+                            }
+                            
+                            ForEach(0..<5 - review.rating, id: \.self) { num in
+                                Image(systemName: "star.circle")
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                    }
+                    Spacer()
+                    Text("\(review.date.getFormattedDate())")
+                        .font(.system(size: 14, weight: .semibold, design: .monospaced))
+                        
+                }
+                
+                Text(review.text)
+                    .font(.system(size: 14, weight: .light, design: .monospaced))
+                    
+            }
+            .padding(.top)
+            .padding(.horizontal)
             .padding(.bottom)
         }
     }
