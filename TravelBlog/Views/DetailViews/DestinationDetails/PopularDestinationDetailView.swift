@@ -26,7 +26,7 @@ struct PopularDestinationDetailView: View {
     
     var body: some View {
         ScrollView {
-            DestinationHeaderContainer(imagesURLString: places.photoCountries.urlString) // UIKit ViewController
+            DestinationHeaderContainer(selectedIndex: 0, imagesURLString: places.photoCountries.urlString) // UIKit ViewController
                 .frame(height: 250)
             
             VStack(alignment: .leading, spacing: 4) {

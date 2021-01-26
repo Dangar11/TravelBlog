@@ -12,29 +12,38 @@ import Kingfisher
 class CustomPageViewController: UIPageViewController {
     
     
+    var selectedIndex: Int
     
     lazy var allControllers: [UIViewController] = []
     
-    init(imageNames: [String]) {
+    init(imageNames: [String], selectedIndex: Int) {
+        self.selectedIndex = selectedIndex
+        
         super.init(transitionStyle: .scroll,
                    navigationOrientation: .horizontal,
                    options: nil)
         
-       
+        
         
         allControllers = imageNames.map { imageName in
             let hostingContoller = UIHostingController(rootView:
-                                                        KFImage(URL(string: imageName))
-                                                        .resizable()
-                                                        .scaledToFill()
+                                                        ZStack {
+                                                            KFImage(URL(string: imageName))
+                                                            .resizable()
+                                                            .scaledToFill()
+                                                        }
+                                                        
             )
             
             hostingContoller.view.clipsToBounds = true
             
             return hostingContoller
         }
+        if selectedIndex < allControllers.count {
+            setViewControllers([allControllers[selectedIndex]], direction: .forward, animated: true, completion: nil)
+        }
         
-        setViewControllers([allControllers.first!], direction: .forward, animated: true, completion: nil)
+        
         
         self.dataSource = self
         self.delegate = self
@@ -67,7 +76,7 @@ extension CustomPageViewController: UIPageViewControllerDataSource {
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        0
+        selectedIndex
     }
     
     
