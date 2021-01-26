@@ -11,6 +11,7 @@ struct TrendingCreatorsView: View {
     
     let trendingCreators = TrendingCreators().trendingCreators
     
+    
     var body: some View {
         VStack {
             HStack {
