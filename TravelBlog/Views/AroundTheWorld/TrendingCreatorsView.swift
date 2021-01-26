@@ -46,6 +46,8 @@ struct TrendingCreatorsView: View {
 
 struct UserView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     let creator: TrendingCreatorsModel
     
     var body: some View {
@@ -55,7 +57,7 @@ struct UserView: View {
                 .scaledToFill()
                 .frame(width: 60, height: 60)
                 .cornerRadius(30)
-                .shadow(color: .gray, radius: 4, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 3)
+                .shadow(color: .init(.sRGB, white: 0.6, opacity: colorScheme == .light ? 1 : 0), radius: 4, x: /*@START_MENU_TOKEN@*/0.0/*@END_MENU_TOKEN@*/, y: 3)
             Text(creator.name)
                 .lineLimit(nil)
                 .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)

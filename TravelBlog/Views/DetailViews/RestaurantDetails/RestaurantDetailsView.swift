@@ -10,6 +10,8 @@ import Kingfisher
 
 struct RestaurantDetailsView: View {
     
+    @Environment(\.presentationMode) var presentation
+    
     let restaurant: RestraurantModel
     
     var body: some View {
@@ -22,6 +24,13 @@ struct RestaurantDetailsView: View {
             PopularDishesView(restaurant: restaurant)
         }
         .navigationBarTitle("Restaurant Details", displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action: { presentation.wrappedValue.dismiss() }) {
+              Image(systemName: "chevron.left")
+                .foregroundColor(Color.backButton)
+                .imageScale(.large)
+            })
+        
     }
 }
 
@@ -227,6 +236,7 @@ struct RestaurantDetailsView_Previews: PreviewProvider {
         NavigationView {
             
             RestaurantDetailsView(restaurant: RestraurantModel(name: "Hide", rank: "4,5 • European • $$$", countryPlace: "London, UK", image: "hide"))
+                
         }
         
         AroundTheWorldView()

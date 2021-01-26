@@ -12,24 +12,44 @@ struct UserDetailsView: View {
     
     let creator: TrendingCreatorsModel
     
+    @Environment(\.presentationMode) var presentation
     
     var body: some View {
-        ScrollView {
+        
+        ZStack {
             
-            TopProfileView(creator: creator)
-             
-            ContactsButtonsView()
+            Color.defaultBackground.ignoresSafeArea()
             
-            ForEach(creator.post, id: \.self) { post in
-                PostCardsView(post: post)
-            }
+            ScrollView(/*@START_MENU_TOKEN@*/.vertical/*@END_MENU_TOKEN@*/, showsIndicators: false) {
+                
+                
+                TopProfileView(creator: creator)
+                 
+                ContactsButtonsView()
+                
+                ForEach(creator.post, id: \.self) { post in
+                    PostCardsView(post: post)
+                }
 
-            }
-            .padding(.top)
-            .padding(.horizontal, 20)
-            .navigationBarTitle(creator.name, displayMode: .inline)
+                }
+                .ignoresSafeArea()
+                .padding(.top)
+                .padding(.horizontal, 20)
+                .navigationBarTitle(creator.name, displayMode: .inline)
+                .navigationBarBackButtonHidden(true)
+                .navigationBarItems(leading: Button(action: { presentation.wrappedValue.dismiss() }) {
+                  Image(systemName: "chevron.left")
+                    .foregroundColor(Color.backButton)
+                    .imageScale(.large)
+                })
+                .background(Color.defaultBackground)
 
-    }
+        }
+        
+        }
+    
+        
+        
     
 }
 
@@ -129,6 +149,8 @@ struct ContactsButtonsView: View {
 }
 
 struct PostCardsView: View  {
+    
+    @Environment(\.colorScheme) var colorScheme
 
     let post: TrandingCreatorPost
 
@@ -172,9 +194,9 @@ struct PostCardsView: View  {
             .padding(.horizontal, 6)
             
         }
-        .background(Color(white: 1))
+        .background(Color.tile)
         .cornerRadius(10)
-        .shadow(color: .init(white: 0.8), radius: 5, x: 0, y: 4)
+        .shadow(color: .init(white: colorScheme == .light ? 0.8 : 0), radius: 5, x: 0, y: 4)
     }
 
 }
@@ -184,6 +206,7 @@ struct UserDetailsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             UserDetailsView(creator: .init(name: "Joe Biden", image: "biden", rating: 5, date: Date(timeIntervalSinceNow: 100000), text: "Fuck all", profile: .init(nickname: "@joeBiden", interesting: "Traveling, Business, Economy", likeCount: 1540, followers: "59,123", following: "4", postsImage: ""), post: JoeBidenPost().post))
+                .colorScheme(.dark)
         }
     }
 }

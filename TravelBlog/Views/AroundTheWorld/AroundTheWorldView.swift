@@ -16,57 +16,72 @@ struct AroundTheWorldView: View {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         
-        NavigationView {
+        ZStack {
             
-            ZStack {
+            Color.defaultBackground.ignoresSafeArea(.all)
+            
+            NavigationView {
                 
-                LinearGradient(gradient: Gradient(colors: [Color.gray, Color.blue]), startPoint: .top, endPoint: .bottom)
-                    .ignoresSafeArea()
-                
-                Color.aroundTheWorldBackground
-                    .offset(y:400) 
-                
-                ScrollView {
+                ZStack {
                     
-                    HStack {
-                        Image(systemName: "magnifyingglass.circle")
-                        Text("Place to go...")
-                        Spacer()
+                    
+                    LinearGradient(gradient: Gradient(colors: [Color.gray, Color.blue]), startPoint: .top, endPoint: .bottom)
+                        .ignoresSafeArea()
+                    
+                    Color.aroundTheWorldBackground
+                        .offset(y:400)
+                    
+                    ScrollView {
+                        
+                        
+                        HStack {
+                            Image(systemName: "magnifyingglass.circle")
+                            Text("Place to go...")
+                            Spacer()
+                        }
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color(.init(white: 1.0, alpha: 0.3)))
+                        .cornerRadius(16)
+                        .padding(16)
+                        
+                        DiscoverCategoriesView()
+                        
+                        VStack {
+                            
+                            PopularDestinationView()
+                            
+                            PopularPlacesToEatView()
+                            
+                            TrendingCreatorsView()
+                        }
+                        .ignoresSafeArea(.all)
+                        .background(Color.defaultBackground)
+                        .cornerRadius(16)
+                        .padding(.top, 32)
                     }
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color(.init(white: 1.0, alpha: 0.3)))
-                    .cornerRadius(16)
-                    .padding(16)
-                    
-                    DiscoverCategoriesView()
-                    
-                    VStack {
-                        
-                        PopularDestinationView()
-                        
-                        PopularPlacesToEatView()
-                        
-                        TrendingCreatorsView()
-                    }
-                    .background(Color.aroundTheWorldBackground)
-                    .cornerRadius(16)
-                    .padding(.top, 32)
-                    
                     
                 }
+                .navigationTitle("Around The World")
+                .navigationBarBackButtonHidden(true)
             }
-            .navigationTitle("Around The World")
         }
+    
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         AroundTheWorldView()
+            .colorScheme(.dark)
+        AroundTheWorldView()
+            .colorScheme(.light)
     }
 }
 

@@ -12,6 +12,9 @@ import MapKit
 
 struct PopularDestinationDetailView: View {
     
+    @Environment(\.presentationMode) var presentation
+    
+    
     let places: PlaceModel
     
     let parisImage = ParisImage()
@@ -56,6 +59,12 @@ struct PopularDestinationDetailView: View {
             
         }
         .navigationBarTitle("\(places.cityName)", displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action: { presentation.wrappedValue.dismiss() }) {
+              Image(systemName: "chevron.left")
+                .foregroundColor(Color.backButton)
+                .imageScale(.large)
+            })
         
     }
 }

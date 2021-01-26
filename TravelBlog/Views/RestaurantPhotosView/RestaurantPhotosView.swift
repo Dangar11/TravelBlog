@@ -10,6 +10,8 @@ import Kingfisher
 
 struct RestaurantPhotosView: View {
     
+    @Environment(\.presentationMode) var presentation
+    
     let photos =  [
         "https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/e2f3f5d4-5993-4536-9d8d-b505d7986a5c",
         "https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/a4d85eff-4c79-4141-a0d6-761cca48eae1",
@@ -67,6 +69,13 @@ struct RestaurantPhotosView: View {
             }
         }
         .navigationBarTitle("All Photos", displayMode: .inline)
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action: { presentation.wrappedValue.dismiss() }) {
+              Image(systemName: "chevron.left")
+                .foregroundColor(Color.backButton)
+                .imageScale(.large)
+            })
+        
     }
 }
 

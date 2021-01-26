@@ -15,6 +15,8 @@ struct DiscoverCategoriesDetailsView: View {
     private let name: String
     @ObservedObject private var vm: CategoryDetailsViewModel
     
+    @Environment(\.presentationMode) var presentation
+    
     init(name: String) {
         print("Loaded CategoryDetails View and making network request for \(name)")
         self.name = name
@@ -63,7 +65,12 @@ struct DiscoverCategoriesDetailsView: View {
             }
         }
         .navigationBarTitle(name, displayMode: .inline)
-        
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button(action: { presentation.wrappedValue.dismiss() }) {
+              Image(systemName: "chevron.left")
+                .foregroundColor(Color.backButton)
+                .imageScale(.large)
+            })
     }
 }
 
