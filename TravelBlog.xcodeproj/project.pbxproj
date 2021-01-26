@@ -11,6 +11,7 @@
 		262408B625BDB96A00F1DE06 /* CountryImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262408B525BDB96A00F1DE06 /* CountryImages.swift */; };
 		262AB93D25B8D72E003E77BB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262AB93C25B8D72E003E77BB /* Category.swift */; };
 		262AB94025B8EC08003E77BB /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262AB93F25B8EC08003E77BB /* PlaceModel.swift */; };
+		2657C2EB25C01FAE00088F0B /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2657C2EA25C01FAE00088F0B /* UserDetailsView.swift */; };
 		2673820725BC2D86003B876F /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2673820625BC2D86003B876F /* NavigationLazyView.swift */; };
 		2673820B25BC3D99003B876F /* LoremIpsum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2673820A25BC3D99003B876F /* LoremIpsum.swift */; };
 		2673820E25BC42D8003B876F /* PopularDestinationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2673820D25BC42D8003B876F /* PopularDestinationDetailView.swift */; };
@@ -45,6 +46,7 @@
 		262408B525BDB96A00F1DE06 /* CountryImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryImages.swift; sourceTree = "<group>"; };
 		262AB93C25B8D72E003E77BB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		262AB93F25B8EC08003E77BB /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		2657C2EA25C01FAE00088F0B /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		2673820625BC2D86003B876F /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 		2673820A25BC3D99003B876F /* LoremIpsum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoremIpsum.swift; sourceTree = "<group>"; };
 		2673820D25BC42D8003B876F /* PopularDestinationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDestinationDetailView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 				26A5801C25BB9D9E00D5A01E /* AroundTheWorldModel */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2657C2E925C01F7700088F0B /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				2657C2EA25C01FAE00088F0B /* UserDetailsView.swift */,
+			);
+			path = UserDetails;
 			sourceTree = "<group>";
 		};
 		267BA77B25BF3089005145FC /* RestaurantDetails */ = {
@@ -170,6 +180,7 @@
 			children = (
 				267BA78125BF313E005145FC /* DiscoverCatergorisDetails */,
 				267DF9F225BDA13800953489 /* DestinationDetails */,
+				2657C2E925C01F7700088F0B /* UserDetails */,
 				267BA77B25BF3089005145FC /* RestaurantDetails */,
 			);
 			path = DetailViews;
@@ -188,10 +199,10 @@
 			isa = PBXGroup;
 			children = (
 				26A9D4C525B8A6C900C1F78E /* AroundTheWorldView.swift */,
+				26A5801025BB33D900D5A01E /* DiscoverCategorisView.swift */,
 				26A5800425BB2C8B00D5A01E /* PopularDestinationView.swift */,
 				26A5800825BB32E500D5A01E /* PopularPlacesToEatView.swift */,
 				26A5800B25BB330D00D5A01E /* TrendingCreatorsView.swift */,
-				26A5801025BB33D900D5A01E /* DiscoverCategorisView.swift */,
 			);
 			path = AroundTheWorld;
 			sourceTree = "<group>";
@@ -333,6 +344,7 @@
 				26A5800C25BB330D00D5A01E /* TrendingCreatorsView.swift in Sources */,
 				262408B625BDB96A00F1DE06 /* CountryImages.swift in Sources */,
 				26A9D4C425B8A6C900C1F78E /* TravelBlogApp.swift in Sources */,
+				2657C2EB25C01FAE00088F0B /* UserDetailsView.swift in Sources */,
 				262AB93D25B8D72E003E77BB /* Category.swift in Sources */,
 				2685398525BF749200D45575 /* RestaurantPhotosView.swift in Sources */,
 				2685397A25BF50DD00D45575 /* RestaurantDetail.swift in Sources */,
