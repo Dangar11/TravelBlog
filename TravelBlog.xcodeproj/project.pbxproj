@@ -11,6 +11,7 @@
 		262408B625BDB96A00F1DE06 /* CountryImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262408B525BDB96A00F1DE06 /* CountryImages.swift */; };
 		262AB93D25B8D72E003E77BB /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262AB93C25B8D72E003E77BB /* Category.swift */; };
 		262AB94025B8EC08003E77BB /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262AB93F25B8EC08003E77BB /* PlaceModel.swift */; };
+		26357E0025D468DE007D8BBF /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26357DFF25D468DE007D8BBF /* RestaurantDetails.swift */; };
 		2657C2EB25C01FAE00088F0B /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2657C2EA25C01FAE00088F0B /* UserDetailsView.swift */; };
 		2673820725BC2D86003B876F /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2673820625BC2D86003B876F /* NavigationLazyView.swift */; };
 		2673820B25BC3D99003B876F /* LoremIpsum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2673820A25BC3D99003B876F /* LoremIpsum.swift */; };
@@ -46,6 +47,7 @@
 		262408B525BDB96A00F1DE06 /* CountryImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryImages.swift; sourceTree = "<group>"; };
 		262AB93C25B8D72E003E77BB /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		262AB93F25B8EC08003E77BB /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		26357DFF25D468DE007D8BBF /* RestaurantDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetails.swift; sourceTree = "<group>"; };
 		2657C2EA25C01FAE00088F0B /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsView.swift; sourceTree = "<group>"; };
 		2673820625BC2D86003B876F /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 		2673820A25BC3D99003B876F /* LoremIpsum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoremIpsum.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				262408B525BDB96A00F1DE06 /* CountryImages.swift */,
 				267BA77825BEAFEB005145FC /* CountryAbout.swift */,
 				2685397925BF50DD00D45575 /* RestaurantDetail.swift */,
+				26357DFF25D468DE007D8BBF /* RestaurantDetails.swift */,
 			);
 			path = DetailsModel;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				26A5800525BB2C8B00D5A01E /* PopularDestinationView.swift in Sources */,
 				26A5800925BB32E500D5A01E /* PopularPlacesToEatView.swift in Sources */,
 				26A5800C25BB330D00D5A01E /* TrendingCreatorsView.swift in Sources */,
+				26357E0025D468DE007D8BBF /* RestaurantDetails.swift in Sources */,
 				262408B625BDB96A00F1DE06 /* CountryImages.swift in Sources */,
 				26A9D4C425B8A6C900C1F78E /* TravelBlogApp.swift in Sources */,
 				2657C2EB25C01FAE00088F0B /* UserDetailsView.swift in Sources */,
