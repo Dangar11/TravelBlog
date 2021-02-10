@@ -23,11 +23,15 @@
 
 ## Categories
 ![](https://media.giphy.com/media/8wEWCmDsQ9tiladdFo/giphy.gif)
+
 ## Popular Destination
 ![](https://media.giphy.com/media/gh2kHiK6gfu2n8oPSv/giphy.gif)
+
 ## Popular Places To Eat
-![](https://media.giphy.com/media/SlQbmSs88N8hQnKOnh/giphy.gif)
+![](https://i.giphy.com/media/SlQbmSs88N8hQnKOnh/giphy.webp)
+
 ## Cretors like presidents who travel a lot 
 ![](https://media.giphy.com/media/HJCeDMt4DL1ClYNbmb/giphy.gif)
+
 ## Dark mode
 ![](https://media.giphy.com/media/XZdlKAzfpY5wzRYa23/giphy.gif)
