@@ -26,7 +26,7 @@
 ## Popular Destination
 ![](https://media.giphy.com/media/gh2kHiK6gfu2n8oPSv/giphy.gif)
 ## Popular Places To Eat
-![](https://media.giphy.com/media/FVexzTvq9txHq5Aicp/giphy.gif)
+![](https://media.giphy.com/media/SlQbmSs88N8hQnKOnh/giphy.gif)
 ## Cretors like presidents who travel a lot 
 ![](https://media.giphy.com/media/HJCeDMt4DL1ClYNbmb/giphy.gif)
 ## Dark mode
